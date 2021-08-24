@@ -20,8 +20,8 @@ const App = () => {
     localStorage.setItem('userContacts', JSON.stringify(contacts));
   }, [contacts]);
   
-  const deleteCoontact = (contactId) => {
-    setContacts.filter(cont => cont.id !== contactId.id)
+  const deleteCoontact = (id) => {
+    setContacts(prevContacts => prevContacts.filter(el => el.id !== id));
   };
 
   const handleAddContact = addContact => {
